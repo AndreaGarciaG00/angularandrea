@@ -1,0 +1,19 @@
+<h3>Listado de músicos</h3>
+<hr>
+<small *ngIf="musicos.length==0; else iniMusicos">No hay músicos inicializados</small>
+
+<ng-template #iniMusicos>
+    <ul>
+        <li *ngFor="let musico of musicos">
+            <small>
+                {{musico.nombre}} - {{musico.trabajo}} - {{musico.instrumento}}
+            </small>
+        </li>
+    </ul>
+</ng-template>
+
+<div class="row">
+    <div class="col-3">
+        <button (click)="inicializar()">Inicializar</button>
+    </div>
+</div>
